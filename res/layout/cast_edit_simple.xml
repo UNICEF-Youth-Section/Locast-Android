@@ -58,13 +58,24 @@
 	    
 	    <TextView
 	        android:id="@+id/location_status"
-	        android:layout_width="fill_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/new_photo"
+	        android:layout_centerHorizontal="true"
 			style="@style/BodyEntryTitle"
 	        android:text="@string/location_unknown" />
+	    
+		<Button
+	        android:id="@+id/location_refresh"
+    	    android:layout_width="wrap_content"
+        	android:layout_height="45dp"
+	        android:layout_below="@+id/new_photo"
+	        android:layout_centerHorizontal="true"
+        	android:layout_toRightOf="@+id/location_status"
+        	android:text="@string/location_refresh_label" />	    
 			
 		/>
+		
 		<edu.mit.mobile.android.locast.widget.TagList 
 			android:id="@+id/tags"
 			android:layout_below="@+id/location_status"
@@ -77,6 +88,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/tags"
 	        android:text="@string/save" />
+	    
 	    </RelativeLayout>
     </ScrollView>	
 </RelativeLayout>
