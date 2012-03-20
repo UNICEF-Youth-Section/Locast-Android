@@ -61,7 +61,7 @@ import edu.mit.mobile.android.widget.NotificationProgressBar;
 import edu.mit.mobile.android.widget.RefreshButton;
 
 public class ItineraryList extends FragmentActivity implements
-		LoaderManager.LoaderCallbacks<Cursor>, OnItemClickListener, OnClickListener {
+		LoaderManager.LoaderCallbacks<Cursor>, OnItemClickListener {
 
 	private static final String TAG = ItineraryList.class.getSimpleName();
 	private CursorAdapter mAdapter;
@@ -97,8 +97,6 @@ public class ItineraryList extends FragmentActivity implements
 
 	private boolean mSyncWhenLoaded = true;
 
-	private RefreshButton mRefresh;
-
 	private Object mSyncHandle;
 	private NotificationProgressBar mProgressBar;
 
@@ -111,7 +109,6 @@ public class ItineraryList extends FragmentActivity implements
 					Log.d(TAG, "refreshing...");
 				}
 				mProgressBar.showProgressBar(true);
-				mRefresh.setRefreshing(true);
 				break;
 
 			case LocastSyncStatusObserver.MSG_SET_NOT_REFRESHING:
@@ -119,7 +116,6 @@ public class ItineraryList extends FragmentActivity implements
 					Log.d(TAG, "done loading.");
 				}
 				mProgressBar.showProgressBar(false);
-				mRefresh.setRefreshing(false);
 				break;
 			}
 		};
@@ -131,15 +127,10 @@ public class ItineraryList extends FragmentActivity implements
 		setContentView(R.layout.simple_list_activity);
 		mProgressBar =(NotificationProgressBar) (findViewById(R.id.progressNotification));
 
-		findViewById(R.id.refresh).setOnClickListener(this);
-		findViewById(R.id.home).setOnClickListener(this);
-
 		mListView = (ListView) findViewById(android.R.id.list);
 		mListView.setOnItemClickListener(this);
 		mListView.addFooterView(LayoutInflater.from(this).inflate(R.layout.list_footer, null), null, false);
 		mListView.setEmptyView(findViewById(R.id.progressNotification));
-		mRefresh = (RefreshButton) findViewById(R.id.refresh);
-		mRefresh.setOnClickListener(this);
 		if (Constants.USE_APPUPDATE_CHECKER) {
 			mAppUpdateChecker = new AppUpdateChecker(this, getString(R.string.app_update_url),
 					new OnUpdateDialog(this, getString(R.string.app_name)));
@@ -291,19 +282,6 @@ public class ItineraryList extends FragmentActivity implements
 	@Override
 	public void onItemClick(AdapterView<?> adapter, View v, int position, long id) {
 		startActivity(new Intent(Intent.ACTION_INSERT, Itinerary.getCastsUri(ContentUris.withAppendedId(mUri, id))));
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-			case R.id.refresh:
-				refresh(true);
-				break;
-
-			case R.id.home:
-				startActivity(getPackageManager().getLaunchIntentForPackage(getPackageName()));
-				break;
-		}
 	}
 
 	@Override

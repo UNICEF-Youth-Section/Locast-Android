@@ -6,6 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
+    <!-- 
     <edu.mit.mobile.android.widget.RefreshButton
         android:id="@+id/refresh"
         style="@style/ActionBar.Button"
@@ -15,6 +16,17 @@
         android:layout_alignParentTop="true"
         android:padding="10dip"
         mel:refreshingDrawable="@drawable/title"
+        android:src="@drawable/title" />
+ -->
+    <ImageView
+        android:id="@+id/refresh"
+        style="@style/ActionBar.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dip"
+        android:contentDescription="@string/home"
         android:src="@drawable/title" />
 
     <ImageView
