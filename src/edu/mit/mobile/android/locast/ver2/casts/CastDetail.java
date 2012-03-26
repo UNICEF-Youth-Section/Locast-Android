@@ -102,7 +102,6 @@ public class CastDetail extends LocatableDetail implements LoaderManager.LoaderC
 						Log.d(TAG, "refreshing...");
 					}
 					mProgressBar.showProgressBar(true);
-					mRefresh.setRefreshing(true);
 					break;
 
 				case LocastSyncStatusObserver.MSG_SET_NOT_REFRESHING:
@@ -110,13 +109,10 @@ public class CastDetail extends LocatableDetail implements LoaderManager.LoaderC
 						Log.d(TAG, "done loading.");
 					}
 					mProgressBar.showProgressBar(false);
-					mRefresh.setRefreshing(false);
 					break;
 			}
 		};
 	};
-
-	private RefreshButton mRefresh;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -144,8 +140,6 @@ public class CastDetail extends LocatableDetail implements LoaderManager.LoaderC
 		mLoaderManager.initLoader(LOADER_CAST_MEDIA, null, this);
 		findViewById(R.id.home).setOnClickListener(this);
 		findViewById(R.id.refresh).setOnClickListener(this);
-		mRefresh = (RefreshButton) findViewById(R.id.refresh);
-		mRefresh.setOnClickListener(this);
 		vcb = (ValidatingCheckBox) findViewById(R.id.favorite);
 
 		vcb.setValidatedClickHandler(new MyFavoriteClickHandler(this, data));

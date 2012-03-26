@@ -67,7 +67,6 @@ import edu.mit.mobile.android.locast.ver2.events.EventCursorAdapter;
 import edu.mit.mobile.android.locast.ver2.itineraries.BasicLocatableOverlay;
 import edu.mit.mobile.android.locast.ver2.itineraries.LocatableItemOverlay;
 import edu.mit.mobile.android.widget.NotificationProgressBar;
-import edu.mit.mobile.android.widget.RefreshButton;
 
 public class LocatableListWithMap extends MapFragmentActivity implements LoaderManager.LoaderCallbacks<Cursor>, OnClickListener, OnItemClickListener {
 
@@ -100,8 +99,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 	private boolean actionSearchNearby = false;
 	private boolean mExpeditedSync;
 
-	private RefreshButton mRefresh;
-
 	private Object mSyncHandle;
 
 	private NotificationProgressBar mProgressBar;
@@ -115,7 +112,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 					Log.d(TAG, "refreshing...");
 				}
 				mProgressBar.showProgressBar(true);
-				mRefresh.setRefreshing(true);
 				break;
 
 			case LocastSyncStatusObserver.MSG_SET_NOT_REFRESHING:
@@ -123,7 +119,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 					Log.d(TAG, "done loading.");
 				}
 				mProgressBar.showProgressBar(false);
-				mRefresh.setRefreshing(false);
 				break;
 			}
 		};
@@ -143,8 +138,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 		mListView.setOnItemClickListener(this);
 		mListView.addFooterView(getLayoutInflater().inflate(R.layout.list_footer, null), null, false);
 		mListView.setEmptyView(findViewById(R.id.progressNotification));
-		mRefresh = (RefreshButton) findViewById(R.id.refresh);
-		mRefresh.setOnClickListener(this);
 		mLoaderManager = getSupportLoaderManager();
 
 		final Intent intent = getIntent();
@@ -210,7 +203,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 		if (actionSearchNearby) {
 			updateLocation();
 		}
-		setRefreshing(true);
 	}
 
 	@Override
@@ -252,7 +244,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 			updateLocation(loc);
 		}else{
 			Toast.makeText(this, R.string.notice_finding_your_location, Toast.LENGTH_LONG).show();
-			setRefreshing(true);
 			mMapView.setVisibility(View.VISIBLE); // show the map, even without location being found
 		}
 		mLastLocation = loc;
@@ -287,8 +278,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 			mLoaderManager.restartLoader(LOADER_ID_CAST, args, this);
 		}
 
-		setRefreshing(true);
-
 		mContentNearLocation = data;
 		if (data != null){
 			refresh(false);
@@ -301,11 +290,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 		if (hasFocus){
 
 		}
-	}
-
-	private void setRefreshing(boolean isRefreshing){
-		final RefreshButton refresh = (RefreshButton)findViewById(R.id.refresh);
-		refresh.setRefreshing(isRefreshing);
 	}
 
 	private void initMapOverlays(LocatableItemOverlay overlay){
@@ -421,8 +405,6 @@ public class LocatableListWithMap extends MapFragmentActivity implements LoaderM
 		}
 
 		mMapView.setVisibility(View.VISIBLE);
-
-		setRefreshing(false);
 
 		if (mExpeditedSync){
 			mExpeditedSync = false;

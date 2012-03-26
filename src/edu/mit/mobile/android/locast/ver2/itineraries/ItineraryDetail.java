@@ -67,7 +67,6 @@ import edu.mit.mobile.android.locast.sync.LocastSyncStatusObserver;
 import edu.mit.mobile.android.locast.ver2.R;
 import edu.mit.mobile.android.maps.PathOverlay;
 import edu.mit.mobile.android.widget.NotificationProgressBar;
-import edu.mit.mobile.android.widget.RefreshButton;
 
 public class ItineraryDetail extends MapFragmentActivity implements LoaderManager.LoaderCallbacks<Cursor>, OnItemClickListener, OnClickListener, DialogInterface.OnClickListener {
 	private static final String TAG = ItineraryDetail.class.getSimpleName();
@@ -106,7 +105,6 @@ public class ItineraryDetail extends MapFragmentActivity implements LoaderManage
 
 	private static final String[] ITINERARY_PROJECTION = new String[]{Itinerary._ID, Itinerary._DESCRIPTION, Itinerary._TITLE, Itinerary._CASTS_COUNT, Itinerary._PATH};
 
-	private RefreshButton mRefresh;
 
 	private Object mSyncHandle;
 
@@ -121,7 +119,6 @@ public class ItineraryDetail extends MapFragmentActivity implements LoaderManage
 					Log.d(TAG, "refreshing...");
 				}
 				mProgressBar.showProgressBar(true);
-				mRefresh.setRefreshing(true);
 				break;
 
 			case LocastSyncStatusObserver.MSG_SET_NOT_REFRESHING:
@@ -129,7 +126,6 @@ public class ItineraryDetail extends MapFragmentActivity implements LoaderManage
 					Log.d(TAG, "done loading.");
 				}
 				mProgressBar.showProgressBar(false);
-				mRefresh.setRefreshing(false);
 				break;
 			}
 		};
@@ -156,8 +152,6 @@ public class ItineraryDetail extends MapFragmentActivity implements LoaderManage
 		mCastView.addHeaderView(layoutInflater.inflate(R.layout.itinerary_detail_list_header, mCastView, false), null, false);
 		mCastView.addFooterView(layoutInflater.inflate(R.layout.list_footer, null), null, false);
 		mCastView.setEmptyView(findViewById(R.id.empty2));
-		mRefresh = (RefreshButton) findViewById(R.id.refresh);
-		mRefresh.setOnClickListener(this);
 
 		final View addCast = findViewById(R.id.add_cast);
 		addCast.setOnClickListener(this);

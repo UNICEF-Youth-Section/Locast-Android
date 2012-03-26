@@ -57,7 +57,6 @@ import edu.mit.mobile.android.locast.sync.LocastSyncStatusObserver;
 import edu.mit.mobile.android.locast.ver2.R;
 import edu.mit.mobile.android.locast.ver2.casts.LocatableListWithMap;
 import edu.mit.mobile.android.widget.NotificationProgressBar;
-import edu.mit.mobile.android.widget.RefreshButton;
 
 public class BrowserHome extends FragmentActivity implements LoaderManager.LoaderCallbacks<Cursor>,
 		OnItemClickListener, OnClickListener {
@@ -88,7 +87,6 @@ public class BrowserHome extends FragmentActivity implements LoaderManager.Loade
 						Log.d(TAG, "refreshing...");
 					}
 					mProgressBar.showProgressBar(true);
-					mRefresh.setRefreshing(true);
 					break;
 
 				case LocastSyncStatusObserver.MSG_SET_NOT_REFRESHING:
@@ -96,13 +94,10 @@ public class BrowserHome extends FragmentActivity implements LoaderManager.Loade
 						Log.d(TAG, "done loading.");
 					}
 					mProgressBar.showProgressBar(false);
-					mRefresh.setRefreshing(false);
 					break;
 			}
 		};
 	};
-
-	private RefreshButton mRefresh;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -131,8 +126,6 @@ public class BrowserHome extends FragmentActivity implements LoaderManager.Loade
 		final LoaderManager lm = getSupportLoaderManager();
 		lm.initLoader(LOADER_FEATURED_CASTS, null, this);
 
-		mRefresh = (RefreshButton) findViewById(R.id.refresh);
-		mRefresh.setOnClickListener(this);
 		findViewById(R.id.itineraries).setOnClickListener(this);
 		findViewById(R.id.events).setOnClickListener(this);
 		findViewById(R.id.nearby).setOnClickListener(this);
@@ -232,9 +225,6 @@ public class BrowserHome extends FragmentActivity implements LoaderManager.Loade
 				}
 				break;
 
-			case R.id.refresh:
-				refresh(true);
-				break;
 		}
 
 	}
