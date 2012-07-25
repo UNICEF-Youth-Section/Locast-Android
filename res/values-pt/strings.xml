@@ -149,4 +149,17 @@
   <string name="auth_set_site">Definir Locast Site</string>
   <string name="cast_edit_error_camera_did_not_return_image">Erro: câmera não retornou uma imagem. Por favor, tente novamente.</string>
   <string name="cast_edit_media_empty">Toque nos botões abaixo para adicionar fotos e vídeos</string>
+  
+  <string name="loading_data">Carregando datos…</string>
+	<string name="wait_location">Por favor espere enquanto adicionamos sua localização ao informe que você está criando. Para melhorar a recepção do GPS, fique em um local aberto, fora de prédios.</string>
+	<string name="need_more_time_to_retrieve_location">Ainda precisamos de mais tempo para gravar sua localização. Pressione \'Continuar\' para aguardar ou \'Parar\' para cancelar a criação do informe e tentar novamente em outro momento.</string>
+	<string name="location_service_not_working">O serviço de localização não está funcionando.</string>
+	<string name="continue_res">Continuar</string>
+	<string name="stop">Parar</string>
+	<string name="location_unknown">Localização não encontrada…</string>
+	<string name="location_known">Localização encontrada!!</string>
+	<string name="unicef_unsynced_casts">UNICEF Unsynced Casts</string>
+	<string name="no_title">(no title)</string>
+	<string name="home">home</string>
+	<string name="location_refresh_label">Atualizar</string>
 </resources>
