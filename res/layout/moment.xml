@@ -13,11 +13,6 @@
 	android:layout_alignParentTop="true"
 	android:background="@android:drawable/editbox_dropdown_light_frame"
   >
-  <org.andnav.osm.views.OpenStreetMapView 
-  android:id="@+id/map" android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:clickable="false"
-		 />
 		 	<edu.mit.mobile.android.locast.widget.LocationLink android:id="@+id/location"
 		android:layout_height="wrap_content"
 		android:layout_width="fill_parent"

@@ -28,7 +28,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingLeft="4dp"
-            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title"
+           
              />
              <!--  -->
     </LinearLayout>

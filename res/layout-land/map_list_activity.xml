@@ -24,13 +24,6 @@
             android:layout_weight="3"
             android:background="@drawable/shadow_right" >
 
-            <com.google.android.maps.MapView
-                android:id="@+id/map"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:apiKey=""
-                android:clickable="true"
-                android:visibility="invisible" />
         </FrameLayout>
 
         <ListView
