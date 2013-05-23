@@ -21,11 +21,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import edu.mit.mobile.android.locast.Constants;
+import edu.mit.mobile.android.locast.SettingsActivity;
 import edu.mit.mobile.android.locast.ver2.R;
 
 public class SigninOrSkip extends Activity implements OnClickListener {
@@ -38,6 +41,22 @@ public class SigninOrSkip extends Activity implements OnClickListener {
 
 	private boolean mSkipIsCancel = false;
 
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Menu.NONE, 0, 0, "Preferences");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+        }
+        return false;
+    }
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

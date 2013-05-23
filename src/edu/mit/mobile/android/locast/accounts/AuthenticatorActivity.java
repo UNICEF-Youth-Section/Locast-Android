@@ -91,7 +91,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity implemen
 
 	private String mUsername;
 	private EditText mUsernameEdit;
-
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -434,26 +434,20 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity implemen
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		getMenuInflater().inflate(R.menu.login_options, menu);
-		if (Constants.DEBUG) {
-			menu.findItem(R.id.set_base_url).setVisible(true);
-		}
-		return true;
-	}
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Menu.NONE, 0, 0, "Preferences");
+        return super.onCreateOptionsMenu(menu);
+    }
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.set_base_url:
-				startActivity(new Intent(this, SettingsActivity.class));
-				return true;
-
-			default:
-				return super.onOptionsItemSelected(item);
-		}
-	}
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+        }
+        return false;
+    }
 
 	@Override
 	public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
