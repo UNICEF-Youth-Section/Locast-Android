@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+	<string-array name="privacy">
+		<item>Public</item>
+		<item>Private</item>
+	</string-array>
+	
+	<string-array name="locast_sites" translatable="false">
+		<item>@string/app_name</item>
+		<item>UNICEF Dev</item>
+	</string-array>
+	
+	<string-array name="locast_urls" translatable="false">
+		<item>@string/default_api_url</item>
+		<item>http://mel-pydev.mit.edu/unicef/api/</item>
+	</string-array>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Default, English -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+	<string name="app_name">UNICEF GIS</string>
+
+    <string name="default_api_url" translatable="false">http://newcity.unicef-gis.org/api/</string>
+	<string name="app_update_url" translatable="false">http://newcity.unicef-gis.org/unicef_gis.json</string>
+	
+    <string name="signup_url" translatable="false">http://newcity.unicef-gis.org/register/</string>
+	<string name="signup_text">Regístrate para unirte a UNICEF-GIS</string>
+	
+	<!-- Main screen -->
+    <string name="about">Acerca de</string>
+    <string name="settings">Configuración</string>
+	
+	<!-- Generic user-facing error messages -->
+	<string name="error_no_providers">Error: no podemos obtener tu ubicación.</string>
+	<string name="error_no_maps">Error: no podemos mostrarte un mapa.</string>
+	<string name="error_cannot_edit">Lo sentimos, no tienes permiso para editar este item.</string>
+	<string name="error_please_enter_a_title">Ingresa un título</string>
+
+    <!-- Generic user-facing notices -->
+    <string name="notice_databases_reset">Base de datos reiniciada.</string>
+	
+	<!-- List sections -->
+	<string name="section_featured">Recomendados</string>
+	<string name="section_drafts">Borradores</string>
+	<string name="section_nearby">Cerca</string>
+	<string name="section_starred">Favoritos</string>
+	<string name="section_all">Todos</string>
+
+	<!-- casts -->
+    <string name="cast_title_hint">Título del reporte</string>
+	<string name="add_to_project">Agregar a un proyecto</string>
+	<string name="add_cast_to_x"><b>Agregar reporte a</b> %1$s</string>
+	<string name="edit_cast">Editar reporte</string>
+	<string name="view_cast">Ver reporte</string>
+	<string name="remove_cast">Eliminar reporte</string>
+	<string name="current_location">Ubicación actual: </string>
+	<string name="cast_location">Ubicación del reporte: </string>
+	<string name="set_location">Cambiar ubicación</string>
+	<string name="my_casts">Mis reportes</string>
+	<string name="casts_tags">Etiquetas</string>
+	<string name="view_casts_in_map">Ver reportes sobre el mapa</string>
+	<string name="cast_publish_title">Publicar reportes</string>
+    <string name="action_record_cast">Guardar reporte</string>
+    <string name="add_cast">Agregar reporte</string>
+    <string name="description">Descripción</string>
+    <string name="cast_play">Reproducir reporte</string>
+    <string name="notice_cast_saved_uploading">Reporte guardado. Subiendo a internet.</string>
+    <string name="notice_cast_saved_no_network">Reporte guardado. Lo subiremos a internet cuando dispongas de conexión.</string>
+    <string name="error_cast_saving">Error guardando reporte.</string>
+    <string name="cast_recording_canceled">Guardado del reporte cancelado.</string>
+    <string name="cast_synchronizing">Sincronizando reporte…</string>
+    <string name="notice_cast_video_has_not_been_uploaded_yet">El video del reporte todavía no fue subido a internet.</string>
+    <string name="error_cast_could_not_play_video">No podemos reproducir este video.</string>
+	<string name="error_cast_no_videos">El reporte no tiene videos.</string>
+    <string name="cast_error_could_not_play_video_neither_net_nor_local">No podemos reproducir este video porque en este momento no tienes conexión a internet.</string>
+	
+	<!-- dialogs -->
+	<string name="cast_delete_title">Eliminar reporte</string>
+	<string name="cast_delete_message">Estás seguro de eliminar el reporte? Se perderán todos los datos.</string>
+	
+	<!-- projects -->
+	<string name="project_title">Título del proyecto</string>
+	<string name="project_description">Descripción del proyecto</string>
+	<string name="project_no_casts">Este proyecto no tiene reportes. Puedes crear un reporte presionando \'menu\'.</string>
+	<string name="project_new_cast">Crear un reporte</string>
+	<string name="project_pick_title">Seleccionar un proyecto</string>
+	<string name="project_list_view_title">Proyectos</string>
+    <string name="edit_project">Editar proyecto</string>
+    <string name="add_project">Crear proyecto</string>
+	<string name="added_cast_to">Agregar reporte a %s</string>
+	<string name="project_you_joined">Te has unido a %s</string>
+	<string name="project_you_left">Has abandonado %s</string>
+    <string name="error_loading_project">Error cargando proyecto.</string>
+	
+	<!-- Video recorder -->
+    <string name="video_recorder_error_could_not_make_directory">No pudimos crear la carpeta, \'%1$s\', para grabar videos.</string>
+    <string name="video_recorder_error_cannot_write_to_sd_card">No podemos escribir en la tarjeta SD.</string>
+    	
+	<string name="dialog_button_delete">Eliminar</string>
+	<string name="dialog_button_rerecord">Volver a grabar</string>
+	
+	<!-- discussion -->
+	<string name="discussion_hint">Comentario</string>
+	
+	<!-- LocationLink widget -->
+	<string name="location_link_no_location">Ubicación desconocida</string>
+	<string name="location_link_accuracy_meter">±%.0f metros</string>
+	<string name="location_link_accuracy_kilometer">±%.01f kilómetros</string>
+	
+	<!-- generic actions -->
+	<string name="done">Listo</string>
+	<string name="publish">Publicar</string>
+    <string name="send">Enviar</string>
+    <string name="save">Guardar</string>
+
+   	<string name="wipe_database">Limpiar la base de datos</string>
+    
+    <!-- privacy -->
+	<string name="privacy_header">Privacidad:</string>
+	<string name="privacy_spinner">Nivel de privacidad</string>
+    <string name="refresh">Refrescar</string>
+    
+	<!-- Sync -->
+	<string name="sync_first">No hay contenido local. Aún no has sincronizado.</string>
+	<string name="sync_notification">Reporte sincronizado.</string>
+	<string name="sync_success">Sincronización exitosa.</string>
+	<string name="sync_menu">Sincronizar</string>
+	<string name="sync_upload_success">El reporte subió a internet.</string>
+	<string name="sync_upload_success_message">\"%1$s\" fue subido a internet.</string>
+    <string name="error_uploading_cast_video">Error subiendo reporte a internet.</string>
+	<string name="sync_upload_fail">Error: algo falló al intentar subir a internet.</string>
+	<string name="sync_upload_fail_message">\"%1$s\" falló al intentar subir a internet.</string>
+    <string name="error_sync_canceled">Error: Sincronización cancelada. </string>
+	<string name="error_sync">No pudimos sincronizar con el servidor. Estás conectado a Internet?</string>
+	<string name="error_sync_no_post">Algo falló al intentar subir a internet. Por favor reintenta la subida.</string>
+    <string name="error_sync_no_data_network">No pudimos sincronizar porque no hay conexión a internet. Chequea que tengas conexión y reintenta.</string>
+    <string name="sync_downloading_cast">Descargando reporte \"%1$s\"…</string>
+    <string name="sync_uploading_cast">Subiendo reporte \"%1$s\"…</string>
+    
+    <!-- Android Sync -->
+    <string name="username_label">Nombre de usuario</string>
+    <string name="password_label">Contraseña</string>
+    <string name="login_message_authenticating">autenticando…</string>
+    <string name="login_message_loginfail">Nombre de usuario o contraseña inválidos.</string>
+    <string name="login_message_login_empty_password">Ingresa una contraseña.</string>
+    <string name="login_message_login_empty_username">Ingresa tu nombre de usuario y contraseña.</string>
+     <!-- Placeholder here is for application name -->
+    <string name="login_title">%1$s Iniciar sesión</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="are_you_sure_you_want_to_logout">Estás seguro de que quieres cerrar la sesión?\nTodos los reportes que no hayan sido subidos a internet se perderán.</string>
+    <string name="sync">Sincronizar</string>
+    <string name="syncing">Sincronizando…</string>
+    <string name="no_pending_casts_to_sync">No quedan reportes por sincronizar</string>
+	
+	<!-- Moments -->
+   	<string name="moment_description_hint">Describe este momento brevemente (opcional)</string>
+	<string name="save_moment">Guardar momento</string>
+    <string name="error_moment_saving_moment">Error guardando momento :-(</string>
+    <string name="moment_saved">Momento guardado.</string>
+	
+	<!-- Preferences -->
+	<!-- account category -->
+   	<string name="pref_cat_account">Cuenta</string>
+   	<string name="pref_title_username">Nombre de usuario</string>
+   	<string name="pref_title_password">Contraseña</string>
+   	
+   	<!-- advanced category -->
+	<string name="pref_cat_advanced">Avanzado</string>
+	<string name="pref_title_server_url">URL del servidor</string>
+	<string name="pref_locast_site">Sitio de UNICEF-GIS</string>
+	<string name="pref_locast_site_dialog_title">Seleccionar un sitio de UNICEF-GIS</string>
+	<string name="pref_locast_site_summary">Seleccionar otro sitio de UNICEF-GIS.</string>
+	<string name="pref_locast_site_message">Esto sólo afectará a las cuentas que crees a partir de ahora.</string>
+	
+	<string name="welcome_message">Welcome! Rai Local Abruzzo is a location-based tourism application for visiting Abruzzo.</string>
+	
+	<string name="auth_signin_or_skip_notice">You\'ll need an account to upload photos and videos to Rai Local Abruzzo</string>
+	<string name="auth_signin_for_favorites">In order to save your favorite casts, you\'ll need a Rai Local account.</string>
+	
+	<string name="auth_signin_register">Iniciar sesión / Registrarse</string>
+	
+	<string name="auth_skip">Saltear</string>
+	
+	<string name="title_upcoming_events">Próximos eventos</string>
+	
+	<string name="title_casts">Reportes</string>
+	
+	<string name="title_nearby">%1$s cerca</string>
+	<string name="title_favorited">Favorito %1$s</string>
+	<string name="title_unfavorited">No favorite %1$s</string>
+	<string name="itinerary_no_casts">No hay reportes en este mapa.</string>
+	<string name="list_empty">Esta lista no tiene items.</string>
+	<string name="error_loading_event">Error cargando evento.</string>
+	<string name="auth_username_hint">alice@example.org</string>
+	<string name="auth_password_hint">contraseña</string>
+	<string name="auth_login">Iniciar sesión</string>
+	<string name="auth_logout">Cerrar sesión</string>
+	<!-- placeholder 1 is app name -->
+	<string name="auth_logout_title">%1$s Cerrar sesión</string>
+	<!-- placeholder 1 is app name -->
+	<string name="auth_logout_message">Esto cerrará tu sesión en %1$s y eliminará todo el contenido sincronizado de tu celular.</string>
+	<string name="auth_logout_error">Ocurrió un error al intentar cerrar la sesión.</string>
+	<string name="empty_castmedia">No hay fotos ni videos asociados a este reporte.</string>
+	<string name="error_cast_media_no_activities">No podemos reproducir este archivo en tu teléfono.</string>
+	<string name="itineraries">Mapas</string>
+	<string name="nearby">Cerca</string>
+	<string name="favorites">Favoritos</string>
+	<string name="events">Eventos</string>
+	<string name="error_no_featured_casts">No hay reportes recomendados.</string>
+	<string name="error_no_items_in_this_list">Esta lista no tiene items.</string>
+	<string name="featured_casts">Reportes recomendados</string>
+	<string name="follow">Seguir</string>
+	<string name="unfollow">No seguir</string>
+	<string name="notice_finding_your_location">Registrando tu ubicación…</string>
+	<string name="auth_error_could_not_contact_server">No pudimos contactar al servidor.</string>
+	<string name="auth_error_server_returned_invalid_data">El servidor retornó datos inválidos.</string>
+	<string name="auth_error_network_protocol_error">Error de red: %1$s</string>
+	<string name="itinerary_detail_itinerary_by">Mapeado por %1$s</string>
+	<string name="videoplayer_notice_loading_video">Cargando video…</string>
+	<string name="reset_database">Reiniciar base de datos</string>
+	<string name="cast_description_hint">Describe el reporte brevemente</string>
+	<string name="tab_location">Ubicación</string>
+	<string name="tab_media">Multimedia</string>
+	<string name="tab_details">Detalles</string>
+	<string name="cast_edit_select_media_type">Seleccionar tipo de archivo</string>
+
+	<string-array name="cast_edit_pick">
+		<item >Video</item>
+		<item >Foto</item>
+	</string-array>
+		<string name="auth_set_site">Seleccionar sitio de UNICEF-GIS</string>
+		<string name="cast_edit_error_camera_did_not_return_image">Error: la cámara no tomó ninguna foto. Por favor reintenta.</string>
+		<string name="cast_edit_media_empty">Presioná los botones aquí abajo para agregar fotos y videos</string>
+	<string name="loading_data">Cargando datos…</string>
+	<string name="wait_location">Por favor espera mientras agregamos tu ubicación actual al reporte que estás creando. Para ayudarnos con esto, intenta pararte en algún lugar al aire libre, sin edificios altos muy cerca.</string>
+	<string name="need_more_time_to_retrieve_location">Necesitamos más tiempo para registrar tu ubicación. Presioná \'Continuar\' para seguir esperando o \'Detener\' para cancelar la creación del reporte y reintentar en otro momento.</string>
+	<string name="location_service_not_working">El servicio de obtención de ubicación se encuentra fuera de funcionamiento.</string>
+	<string name="continue_res">Continuar</string>
+	<string name="stop">Detener</string>
+	<string name="location_unknown">Registrando ubicación…</string>
+	<string name="location_known">Ubicación registrada!</string>
+	<string name="unicef_unsynced_casts">UNICEF Reportes no subidos</string>
+	<string name="no_title">(sin título)</string>
+	<string name="home">inicio</string>
+	<string name="location_refresh_label">Volver a registrar ubicación</string>
+</resources>
